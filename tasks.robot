@@ -25,7 +25,7 @@ Get lyrics
 Translate
     [Arguments]    ${lyrics}
     Go To    https://translate.google.com/#view=home&op=translate&sl=${SOURCE_LANG}&tl=${TARGET_LANG}&text=${lyrics}
-    ${translation_element}    Set Variable    css:.tlid-translation
+    ${translation_element}=    Set Variable    css:.tlid-translation
     Wait Until Element Is Visible    ${translation_element}
     ${translation}=    Get Text    ${translation_element}
     [Return]    ${translation}
